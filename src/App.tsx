@@ -23,46 +23,53 @@ export default function App() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto">
-      <div className="">
-        <div className="bg-[#334E52]">
-          <h1 className="p-4 text-white text-3xl font-semibold text-center">
+    <div className="w-full max-w-6xl mx-auto overflow-hidden">
+      <div className="w-full">
+        {/* Hero Heading */}
+        <div className="bg-[#334E52] px-4 py-4 sm:px-6 sm:py-5 md:px-8 lg:px-10">
+          <h1 className="text-center text-lg leading-7 font-semibold text-white sm:text-2xl sm:leading-9 md:text-3xl md:leading-10 lg:text-3xl lg:leading-[1.5]">
             আপনার ছোট্ট সোনামণির জন্যে প্রিমিয়াম ১০০% স্যাফরান কটন ফেব্রিক্স এর
-            তৈরি সেট (টপ এবং প্লাজ্জু) বিশেষ ডিসকাউন্ট অফার এ!
+            তৈরি সেট (টপ এবং প্লাজু) বিশেষ ডিসকাউন্ট অফার এ!
           </h1>
         </div>
 
         {/* Image Carousel */}
-        <div className="relative p-4 bg-blue-100">
+        <div className="relative w-full bg-blue-100 p-2 sm:p-3 md:p-4">
           <img
             src={images[current]}
             alt={`Product ${current + 1}`}
-            className="w-full h-[850px] object-cover rounded-xl"
+            className="h-[300px] w-full rounded-lg object-cover sm:h-[450px] sm:rounded-xl md:h-[600px] lg:h-[850px]"
           />
 
           {/* Previous Button */}
           <button
+            type="button"
             onClick={prevSlide}
-            className="absolute left-8 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full text-2xl"
+            aria-label="Previous slide"
+            className="absolute left-4 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-xl text-white transition hover:bg-black/70 sm:left-6 sm:h-10 sm:w-10 sm:text-2xl md:left-8"
           >
             ‹
           </button>
 
           {/* Next Button */}
           <button
+            type="button"
             onClick={nextSlide}
-            className="absolute right-8 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full text-2xl"
+            aria-label="Next slide"
+            className="absolute right-4 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-xl text-white transition hover:bg-black/70 sm:right-6 sm:h-10 sm:w-10 sm:text-2xl md:right-8"
           >
             ›
           </button>
 
           {/* Dots */}
-          <div className="flex justify-center gap-2 mt-4">
+          <div className="mt-3 flex justify-center gap-2 sm:mt-4">
             {images.map((_, index) => (
               <button
+                type="button"
                 key={index}
                 onClick={() => setCurrent(index)}
-                className={`w-3 h-3 rounded-full ${
+                aria-label={`Go to slide ${index + 1}`}
+                className={`h-2.5 w-2.5 rounded-full transition-all sm:h-3 sm:w-3 ${
                   current === index ? "bg-white" : "bg-white/40"
                 }`}
               />
@@ -70,53 +77,73 @@ export default function App() {
           </div>
         </div>
 
-        <div className="bg-[#334E52]">
-          <h2 className="p-4 text-white text-3xl font-semibold text-center">
+        {/* Discount Heading */}
+        <div className="bg-[#334E52] px-4 py-4 sm:px-6 sm:py-5 md:px-8 lg:px-10">
+          <h2 className="text-center text-lg leading-7 font-semibold text-white sm:text-2xl sm:leading-9 md:text-3xl md:leading-10">
             আমাদের সকল প্রোডাক্ট গুলো এখন পেয়ে যাচ্ছেন বর্তমানে ২৫% ডিসকাউন্ট
             প্রাইজ এ ।
           </h2>
         </div>
-        <div>
+
+        {/* Timer */}
+        <div className="w-full">
           <Timer />
         </div>
-        <div className="flex justify-center my-5 ">
-          <button className="py-2 px-8 text-white font-semibold text-[22px] bg-blue-300 rounded-[4px]">
+
+        {/* Order Button */}
+        <div className="my-5 flex justify-center px-4 sm:my-6">
+          <button
+            type="button"
+            className="w-full max-w-xs rounded-md bg-[#a86b20] px-6 py-2.5 text-lg font-semibold text-white transition hover:bg-[#8b5819] sm:w-auto sm:px-8 sm:text-[22px]"
+          >
             অর্ডার করুন
           </button>
         </div>
 
-        <div className="my-6">
+        {/* Price */}
+        <div className="my-5 px-4 sm:my-6 sm:px-6 md:px-8">
           <TextPrice />
         </div>
 
+        {/* Description */}
         <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10">
-          {/* Description */}
-          <h4 className=" text-center font-semibold text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-7 sm:leading-8 md:leading-9 mt-10 sm:mt-12 mx-auto md:mt-16 max-w-5xl">
+          <h4 className="mx-auto mt-8 max-w-5xl text-center text-[15px] font-semibold leading-7 sm:mt-10 sm:text-[18px] sm:leading-8 md:mt-12 md:text-[20px] md:leading-9 lg:mt-16 lg:text-[22px]">
             ১০০% সুতি এবং সুদক্ষ কারিগর দ্বারা তৈরি তাই আপনার ছোট্ট সোনামণির
             জন্য নিশ্চিন্তে অর্ডার করতে পারেন। 💖 গরমের জন্য একদম পারফেক্ট এবং
             খুবই আরামদায়ক ☀️
           </h4>
+
+          {/* Product Code */}
           <ProductCode />
         </div>
 
-        <div>
+        {/* Why Choose Us */}
+        <div className="w-full">
           <WhyChooseUs />
         </div>
-        <div>
+
+        {/* Product Details */}
+        <div className="w-full">
           <ProductDetails />
         </div>
-        <div>
+
+        {/* Size Guide */}
+        <div className="w-full">
           <SizeGuide />
         </div>
 
-        <div>
+        {/* Checkout */}
+        <div className="w-full">
           <Checkout />
         </div>
-        <div>
+
+        {/* Order Summary */}
+        <div className="w-full">
           <OrderSummary />
         </div>
 
-        <div>
+        {/* Footer */}
+        <div className="w-full">
           <Footer />
         </div>
       </div>

@@ -16,27 +16,38 @@ export default function Timer() {
   const seconds = time % 60;
 
   return (
-    <div className="my-4 flex items-center justify-center">
-      <div className="flex gap-8">
-        {/* Hours */}
-        <div className="w-40 h-30 bg-black rounded-[30px] flex flex-col items-center justify-center">
-          <span className="text-white text-5xl font-bold">{hours}</span>
+    <div className="my-4 w-full px-3 sm:px-4">
+      <div className="flex w-full justify-center">
+        <div className="grid w-full max-w-2xl grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-8">
+          {/* Hours */}
+          <div className="flex aspect-[1.25/1] min-h-[90px] flex-col items-center justify-center rounded-2xl bg-black sm:min-h-[110px] sm:rounded-[24px] md:min-h-[125px] md:rounded-[28px] lg:min-h-[130px] lg:rounded-[30px]">
+            <span className="text-2xl font-bold leading-none text-white sm:text-4xl md:text-5xl">
+              {String(hours).padStart(2, "0")}
+            </span>
+            <span className="mt-2 text-sm text-white sm:text-xl md:text-2xl lg:text-3xl">
+              ঘণ্টা
+            </span>
+          </div>
 
-          <span className="text-white text-3xl">ঘণ্টা</span>
-        </div>
+          {/* Minutes */}
+          <div className="flex aspect-[1.25/1] min-h-[90px] flex-col items-center justify-center rounded-2xl bg-black sm:min-h-[110px] sm:rounded-[24px] md:min-h-[125px] md:rounded-[28px] lg:min-h-[130px] lg:rounded-[30px]">
+            <span className="text-2xl font-bold leading-none text-white sm:text-4xl md:text-5xl">
+              {String(minutes).padStart(2, "0")}
+            </span>
+            <span className="mt-2 text-sm text-white sm:text-xl md:text-2xl lg:text-3xl">
+              মিনিট
+            </span>
+          </div>
 
-        {/* Minutes */}
-        <div className="w-40 h-30 bg-black rounded-[30px] flex flex-col items-center justify-center">
-          <span className="text-white text-5xl font-bold">{minutes}</span>
-
-          <span className="text-white text-3xl">মিনিট</span>
-        </div>
-
-        {/* Seconds */}
-        <div className="w-40 h-30 bg-black rounded-[30px] flex flex-col items-center justify-center">
-          <span className="text-white text-5xl font-bold">{seconds}</span>
-
-          <span className="text-white text-3xl">সেকেন্ড</span>
+          {/* Seconds */}
+          <div className="flex aspect-[1.25/1] min-h-[90px] flex-col items-center justify-center rounded-2xl bg-black sm:min-h-[110px] sm:rounded-[24px] md:min-h-[125px] md:rounded-[28px] lg:min-h-[130px] lg:rounded-[30px]">
+            <span className="text-2xl font-bold leading-none text-white sm:text-4xl md:text-5xl">
+              {String(seconds).padStart(2, "0")}
+            </span>
+            <span className="mt-2 text-sm text-white sm:text-xl md:text-2xl lg:text-3xl">
+              সেকেন্ড
+            </span>
+          </div>
         </div>
       </div>
     </div>

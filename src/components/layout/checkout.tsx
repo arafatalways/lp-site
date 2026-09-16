@@ -5,24 +5,25 @@ const Checkout = () => {
     {
       id: 1,
       image: "/images/lp-1.jpg",
-      name: "মায়াবতী ফ্লোরাল টপ এন্ড প্লাজ্জু ( ১ সেটের কম্বো ) - কোড ০৪",
+      name: "মায়াবতী ফ্লোরাল টপ এন্ড প্লাজু ( ১ সেটের কম্বো ) - কোড ০৪",
       price: 1050,
     },
     {
       id: 2,
       image: "/images/lp-1.jpg",
-      name: "মায়াবতী ফ্লোরাল টপ এন্ড প্লাজ্জু ( ১ সেটের কম্বো ) - কোড ০৫",
+      name: "মায়াবতী ফ্লোরাল টপ এন্ড প্লাজু ( ১ সেটের কম্বো ) - কোড ০৫",
       price: 1050,
     },
     {
       id: 3,
       image: "/images/lp-1.jpg",
-      name: "মায়াবতী ফ্লোরাল টপ এন্ড প্লাজ্জু ( ১ সেটের কম্বো ) - কোড ০৬",
+      name: "মায়াবতী ফ্লোরাল টপ এন্ড প্লাজু ( ১ সেটের কম্বো ) - কোড ০৬",
       price: 1050,
     },
   ];
 
   const [selectedProducts, setSelectedProducts] = useState<number[]>([1, 2]);
+
   const [quantities, setQuantities] = useState<Record<number, number>>({
     1: 1,
     2: 1,
@@ -31,12 +32,14 @@ const Checkout = () => {
 
   const [age, setAge] = useState("");
 
+  // Product select / unselect
   const toggleProduct = (id: number) => {
     setSelectedProducts((prev) =>
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
     );
   };
 
+  // Increase quantity
   const increaseQuantity = (id: number) => {
     setQuantities((prev) => ({
       ...prev,
@@ -44,6 +47,7 @@ const Checkout = () => {
     }));
   };
 
+  // Decrease quantity
   const decreaseQuantity = (id: number) => {
     setQuantities((prev) => ({
       ...prev,
@@ -101,22 +105,25 @@ const Checkout = () => {
                 <div className="mt-2 flex flex-wrap items-center gap-4">
                   {/* Quantity */}
                   <div className="flex h-8 items-center overflow-hidden rounded border border-gray-300">
+                    {/* Minus */}
                     <button
                       type="button"
                       onClick={() => decreaseQuantity(product.id)}
-                      className="h-full w-8 bg-gray-100 text-gray-600 hover:bg-gray-200"
+                      className="h-full w-8 bg-gray-100 text-lg text-gray-600 transition hover:bg-gray-200"
                     >
                       −
                     </button>
 
-                    <span className="flex h-full w-10 items-center justify-center border-x border-gray-300 text-sm">
+                    {/* Quantity */}
+                    <span className="flex h-full w-10 items-center justify-center border-x border-gray-300 text-sm font-semibold">
                       {quantities[product.id]}
                     </span>
 
+                    {/* Plus */}
                     <button
                       type="button"
                       onClick={() => increaseQuantity(product.id)}
-                      className="h-full w-8 bg-gray-100 text-gray-600 hover:bg-gray-200"
+                      className="h-full w-8 bg-gray-100 text-lg text-gray-600 transition hover:bg-gray-200"
                     >
                       +
                     </button>
@@ -124,7 +131,10 @@ const Checkout = () => {
 
                   {/* Price */}
                   <span className="text-sm font-bold text-gray-900 sm:text-base">
-                    {product.price.toLocaleString("bn-BD")}৳
+                    {(product.price * quantities[product.id]).toLocaleString(
+                      "bn-BD",
+                    )}
+                    ৳
                   </span>
                 </div>
               </div>
@@ -138,7 +148,7 @@ const Checkout = () => {
             Billing details
           </h2>
 
-          {/* Age */}
+          {/* ================= SIZE ================= */}
           <div className="mb-7">
             <p className="mb-3 text-sm font-medium text-gray-800 sm:text-base">
               সাইজ হবে? <span className="text-red-500">*</span>
@@ -173,7 +183,7 @@ const Checkout = () => {
             </div>
           </div>
 
-          {/* Extra Size */}
+          {/* ================= EXTRA SIZE ================= */}
           <div className="mb-6">
             <label className="mb-2 block text-sm font-medium text-gray-800 sm:text-base">
               এক্সট্রা অতিরিক্ত সাইজ লাগলে নিচে লিখে দিন অথবা খালি রাখুন।
@@ -198,7 +208,7 @@ const Checkout = () => {
             />
           </div>
 
-          {/* Name */}
+          {/* ================= NAME ================= */}
           <div className="mb-6">
             <label className="mb-2 block text-sm font-medium text-gray-800 sm:text-base">
               আপনার নামঃ <span className="text-red-500">*</span>
@@ -222,7 +232,7 @@ const Checkout = () => {
             />
           </div>
 
-          {/* Phone */}
+          {/* ================= PHONE ================= */}
           <div className="mb-6">
             <label className="mb-2 block text-sm font-medium text-gray-800 sm:text-base">
               ফোন নাম্বারঃ <span className="text-red-500">*</span>
@@ -246,7 +256,7 @@ const Checkout = () => {
             />
           </div>
 
-          {/* Address */}
+          {/* ================= ADDRESS ================= */}
           <div className="mb-7">
             <label className="mb-2 block text-sm font-medium text-gray-800 sm:text-base">
               ঠিকানাঃ <span className="text-red-500">*</span>
