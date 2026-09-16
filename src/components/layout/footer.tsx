@@ -1,20 +1,5 @@
-import {
-  FaFacebookF,
-  FaWhatsapp,
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaEnvelope,
-} from "react-icons/fa";
-import {
-  ArrowRight,
-  Clock,
-  Headphones,
-  Mail,
-  MapPin,
-  Phone,
-  ShieldCheck,
-  Truck,
-} from "lucide-react";
+import { FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
