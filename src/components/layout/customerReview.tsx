@@ -59,7 +59,7 @@ const CustomerReview = () => {
             Customer Reviews
           </span>
 
-          <h2 className="text-2xl font-bold leading-tight text-gray-900 sm:text-3xl md:text-4xl lg:text-5xl">
+          <h2 className="text-2xl font-bold leading-tight text-gray-900 sm:text-3xl md:text-3xl lg:text-3xl">
             আমাদের কাস্টমারদের
             <span className="text-[#a86b20]"> মতামত</span>
           </h2>
