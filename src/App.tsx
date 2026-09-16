@@ -8,6 +8,7 @@ import SizeGuide from "@/components/layout/sizeGuide";
 import Checkout from "@/components/layout/checkout";
 import OrderSummary from "@/components/layout/orderSummary";
 import Footer from "@/components/layout/footer";
+import CustomerReview from "@/components/layout/customerReview";
 
 const images = ["/images/lp-1.jpg", "/images/lp-2.jpg", "/images/lp-3.jpg"];
 
@@ -125,6 +126,10 @@ export default function App() {
         {/* Product Details */}
         <div className="w-full">
           <ProductDetails />
+        </div>
+
+        <div className="w-full">
+          <CustomerReview />
         </div>
 
         {/* Size Guide */}
