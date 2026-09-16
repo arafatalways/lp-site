@@ -4,14 +4,14 @@ const OrderSummary = () => {
   const products = [
     {
       id: 1,
-      image: "/public/images/lp-1.jpg",
+      image: "/images/lp-1.jpg",
       name: "মায়াবতী ফ্লোরাল টপ এন্ড প্লাজ্জু ( ১ সেটের কম্বো ) - কোড ০৪",
       price: 1050,
       quantity: 1,
     },
     {
       id: 2,
-      image: "/public/images/lp-1.jpg",
+      image: "/images/lp-1.jpg",
       name: "মায়াবতী ফ্লোরাল টপ এন্ড প্লাজ্জু ( ১ সেটের কম্বো ) - কোড ০৫",
       price: 1050,
       quantity: 1,

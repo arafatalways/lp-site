@@ -9,11 +9,7 @@ import Checkout from "@/components/layout/checkout";
 import OrderSummary from "@/components/layout/orderSummary";
 import Footer from "@/components/layout/footer";
 
-const images = [
-  "/public/images/lp-1.jpg",
-  "/public/images/lp-2.jpg",
-  "/public/images/lp-3.jpg",
-];
+const images = ["/images/lp-1.jpg", "/images/lp-2.jpg", "/images/lp-3.jpg"];
 
 export default function App() {
   const [current, setCurrent] = useState(0);

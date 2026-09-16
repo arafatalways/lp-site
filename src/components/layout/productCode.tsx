@@ -1,15 +1,15 @@
 const ProductCode = () => {
   const products = [
     {
-      image: "/public/images/lp-1.jpg",
+      image: "/images/lp-1.jpg",
       code: "কোড - ০৪",
     },
     {
-      image: "/public/images/lp-1.jpg",
+      image: "/images/lp-1.jpg",
       code: "কোড - ০৫",
     },
     {
-      image: "/public/images/lp-1.jpg",
+      image: "/images/lp-1.jpg",
       code: "কোড - ০৬",
     },
   ];
